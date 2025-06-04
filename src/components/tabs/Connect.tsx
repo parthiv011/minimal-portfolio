@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { ConnectDetail } from "../ui/ConnectDetail";
 
 const connects = [
@@ -40,3 +41,9 @@ export default function Connect() {
     </div>
   );
 }
+=======
+export default function Connect() {
+    return <div>Connect Tab</div>;
+  }
+  
+>>>>>>> origin/main

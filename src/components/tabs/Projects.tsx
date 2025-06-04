@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { ProjectCard } from "../ui/ProjectCard";
 import { projects } from "./../../utils/lib";
 
@@ -27,3 +28,9 @@ export default function Projects() {
     </div>
   );
 }
+=======
+export default function Projects() {
+    return <div>Projects Tab</div>;
+  }
+  
+>>>>>>> origin/main
