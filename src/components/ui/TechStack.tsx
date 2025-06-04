@@ -39,8 +39,7 @@ export default function TechStack() {
       ))}
       <p>
         My strength is building core web applications which can serve people
-        throughout the globe. I'm currently working with Typescript, NextJS and
-        HonoJS. For me my first ❤️ is C++.
+        throughout the globe. I'm currently working with Typescript and TurboRepos.
       </p>
     </div>
   );

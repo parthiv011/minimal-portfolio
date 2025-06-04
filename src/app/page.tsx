@@ -12,7 +12,7 @@ import Connect from "@/components/tabs/Connect";
 
 const tabComponents = {
   About: <About />,
-  Present: <Present />,
+  // Present: <Present />,
   Projects: <Projects />,
   Experiences: <Experiences />,
   Connect: <Connect />,
@@ -49,8 +49,8 @@ export default function Home() {
       </section>
 
       <section>
-        <hr className="my-4" />
-        <nav className="sticky top-4 z-10">
+        <hr className="" />
+        <nav className="sticky top-0 pt-4 z-10 bg-white">
           <ul className="flex gap-6">
             {Object.keys(tabComponents).map((tab) => (
               <li key={tab}>
