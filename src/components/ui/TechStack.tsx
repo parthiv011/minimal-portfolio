@@ -38,7 +38,7 @@ export default function TechStack() {
       ))}
       <p>
         My strength is building core web applications which can serve people
-        throughout the globe. I'm currently working with Typescript and
+        throughout the globe. I&apos;m currently working with Typescript and
         TurboRepos.
       </p>
       <p>
