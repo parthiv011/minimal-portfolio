@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { ConnectDetail } from "../ui/ConnectDetail";
 
 const connects = [
@@ -16,6 +15,11 @@ const connects = [
     item: "Github",
     link: "https://github.com/parthiv011",
     username: "@parthiv011",
+  },
+  {
+    item: "Leetcode",
+    link: "https://leetcode.com/u/parthiv_77/",
+    username: "@parthiv_77",
   },
   {
     item: "Email",
@@ -41,9 +45,3 @@ export default function Connect() {
     </div>
   );
 }
-=======
-export default function Connect() {
-    return <div>Connect Tab</div>;
-  }
-  
->>>>>>> origin/main

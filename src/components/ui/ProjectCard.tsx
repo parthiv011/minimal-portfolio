@@ -36,7 +36,9 @@ export const ProjectCard = ({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex bg-gray-300 py-2 px-4 rounded-xl"
+            className="inline-flex bg-gray-300 py-2 px-4 rounded-xl
+                       transition duration-300 ease-in-out
+                       hover:bg-gray-400 hover:shadow-md hover:scale-105"
           >
             <span className="inline-flex justify-center items-center text-sm font-medium">
               <svg
@@ -63,7 +65,9 @@ export const ProjectCard = ({
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex bg-gray-300 py-2 rounded-xl px-4"
+          className="inline-flex bg-gray-300 py-2 px-4 rounded-xl
+                     transition duration-300 ease-in-out
+                     hover:bg-gray-400 hover:shadow-md hover:scale-105"
         >
           <span className="inline-flex justify-center items-center text-sm font-medium">
             <BsGithub className="size-4 mr-2" />

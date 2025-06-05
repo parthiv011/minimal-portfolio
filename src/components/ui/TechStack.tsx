@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDocker, FaAws, FaJava } from "react-icons/fa";
 import {
   SiPrisma,
@@ -39,44 +38,31 @@ export default function TechStack() {
       ))}
       <p>
         My strength is building core web applications which can serve people
-        throughout the globe. I'm currently working with Typescript and TurboRepos.
+        throughout the globe. I'm currently working with Typescript and
+        TurboRepos.
+      </p>
+      <p>
+        Currently learning more about FinTech, with a focus on how tech can
+        solve real problems in finance.
       </p>
     </div>
   );
 }
 
-function TiltCard({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const rotateX = useTransform(y, [-50, 50], [8, -8]);
-  const rotateY = useTransform(x, [-50, 50], [-8, 8]);
-
-  function handleMouseMove(e: React.MouseEvent) {
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-
-    const offsetX = e.clientX - rect.left - rect.width / 2;
-    const offsetY = e.clientY - rect.top - rect.height / 2;
-
-    x.set(offsetX);
-    y.set(offsetY);
-  }
-
-  function handleMouseLeave() {
-    animate(x, 0, { duration: 0.3 });
-    animate(y, 0, { duration: 0.3 });
-  }
-
+export function TiltCard({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      ref={ref}
-      className="w-fit px-2 py-1 border shadow-sm cursor-pointer transition-all"
-      style={{ rotateX, rotateY, transformPerspective: 600 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      whileHover={{
+        scale: 1.05,
+        rotateX: 4,
+        rotateY: -4,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+      }}
+      className="w-fit px-2.5 py-0.5 border shadow-sm cursor-pointer bg-white"
     >
       {children}
     </motion.div>
