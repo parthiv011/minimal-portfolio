@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import About from "@/components/tabs/About";
 import Projects from "@/components/tabs/Projects";
 import Experiences from "@/components/tabs/Experiences";
@@ -33,7 +34,7 @@ export default function HomeContent() {
   }, [tab]);
 
   return (
-    <main className="relative max-w-3xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <main className="relative max-w-3xl mx-auto py-16 px-4 sm:px-6 lg:px-8 transition-all duration-300 ease-in-out">
       <section className="mb-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
@@ -87,7 +88,7 @@ export default function HomeContent() {
               <li key={tab}>
                 <button
                   onClick={() => router.push(`/?tab=${tab}`, undefined)}
-                  className={`relative inline-block px-1 pb-1 transition-all font-medium text-sm sm:text-base after:content-[''] after:absolute after:bottom-0 after:w-0 after:h-[1px] after:bg-black after:transition-all after:duration-300
+                  className={`relative inline-block px-1 pb-1 transition-all font-medium text-sm sm:text-base after:content-[''] after:absolute after:bottom-0 after:w-0 after:h-[1px] after:bg-black after:transition-all after:duration-300 cursor-pointer
               ${
                 activeTab === tab
                   ? "after:left-0 after:w-full"
@@ -100,7 +101,21 @@ export default function HomeContent() {
             ))}
           </ul>
         </nav>
-        <div className="mt-6">{tabComponents[activeTab]}</div>
+
+        {/* Framer Motion tab transition */}
+        <div className="mt-6 min-h-[200px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              {tabComponents[activeTab]}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </section>
     </main>
   );
