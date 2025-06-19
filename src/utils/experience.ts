@@ -4,8 +4,9 @@ export const experiences = [
     subheading: "Full Stack Engineer Intern (Dec 2024 - May 2025)",
     points: [
       "Collaborated with engineering team to monitor, scale, and enhance backend services, improving performance for one of India’s top 4 e-commerce platforms.",
-      "Built and integrated key features into an in-house end-to-end platform for D2C apparel operations, resulting in a 64% reduction in manual workload",
-      "Deployed 4 cron jobs to automate the retrieval and storage of Meta Ads and Google Analytics data into the database, ensuring consistent and reliable tracking of marketing performance",
+      "Designed and integrated key features into end-to-end platform for B2B apparel operations, resulting in a 84% reduction in manual workload.",
+      "Automated the relabeling of 50,000+ products, including restructuring their category hierarchies, using a custom script—improving data consistency and system scalability.",
+      "Deployed 4 cron jobs to automate the retrieval and storage of Meta Ads and Google Analytics data into the database, ensuring consistent and reliable tracking of marketing performance.",
     ],
   },
   {
