@@ -31,7 +31,7 @@ export const ExperienceItem = ({
               ? "Collapse experience details"
               : "Expand experience details"
           }
-          className={`bg-gray-200 p-3 rounded-full transition-transform ${
+          className={`bg-gray-200 p-3 rounded-full transition-transform cursor-pointer ${
             isExpanded ? "rotate-180" : ""
           }`}
         >
