@@ -15,6 +15,14 @@ export const projects = [
     ],
   },
   {
+    heading: "Astitva Finances (Glimpse of Freelance Projects)",
+    description:
+      "Designed a clean, well-branded homepage for a finance-based company. While the full project can't be shared due to confidentiality, here's a small preview of my work.",
+    link: "https://astitva-finances.vercel.app/",
+    github: "https://github.com/parthiv011/",
+    techstack: ["Tyescript", "React", "Framer Motion", "Tailwind CSS"],
+  },
+  {
     heading: "BookIt.com - Frontend",
     description:
       "A responsive and interactive frontend for BookIt.com built with React.js, featuring dynamic data fetching with React Query, reusable state management via Context API, custom hooks, and data visualization using Recharts.",
