@@ -71,7 +71,7 @@ export default function HomeContent() {
           </div>
 
           <a
-            href="./Parthiv_Full_stack.pdf"
+            href="./Parthiv_Full_Stack_1year.pdf"
             download
             className="text-sm sm:text-base relative inline-block after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[1px] after:bg-black after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full"
           >

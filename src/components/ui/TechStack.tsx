@@ -10,20 +10,21 @@ import {
   SiJavascript,
   SiTypescript,
 } from "react-icons/si";
+import { Magnetic } from "./magnetic";
 
 export default function TechStack() {
   const stack = [
+    { label: "Javascript", icon: <SiJavascript className="h-5 w-5 mr-2" /> },
+    { label: "Typescript", icon: <SiTypescript className="h-5 w-5 mr-2" /> },
+    { label: "Java", icon: <FaJava className="h-5 w-5 mr-2" /> },
     { label: "React", icon: <FaReact className="h-5 w-5 mr-2" /> },
+    { label: "Nextjs", icon: <SiNextdotjs className="h-5 w-5 mr-2" /> },
     { label: "Node.js", icon: <FaNodeJs className="h-5 w-5 mr-2" /> },
     { label: "Docker", icon: <FaDocker className="h-5 w-5 mr-2" /> },
-    { label: "AWS", icon: <FaAws className="h-5 w-5 mr-2" /> },
     { label: "Prisma", icon: <SiPrisma className="h-5 w-5 mr-2" /> },
     { label: "Tailwind", icon: <SiTailwindcss className="h-5 w-5 mr-2" /> },
-    { label: "Nextjs", icon: <SiNextdotjs className="h-5 w-5 mr-2" /> },
+    { label: "AWS", icon: <FaAws className="h-5 w-5 mr-2" /> },
     { label: "Python", icon: <SiPython className="h-5 w-5 mr-2" /> },
-    { label: "Typescript", icon: <SiTypescript className="h-5 w-5 mr-2" /> },
-    { label: "Javascript", icon: <SiJavascript className="h-5 w-5 mr-2" /> },
-    { label: "Java", icon: <FaJava className="h-5 w-5 mr-2" /> },
   ];
 
   return (
@@ -51,20 +52,17 @@ export default function TechStack() {
 
 export function TiltCard({ children }: { children: React.ReactNode }) {
   return (
-    <motion.div
-      whileHover={{
-        scale: 1.05,
-        rotateX: 4,
-        rotateY: -4,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 200,
-        damping: 15,
-      }}
-      className="w-fit px-2.5 py-0.5 border shadow-sm cursor-pointer bg-white"
-    >
-      {children}
-    </motion.div>
+    <Magnetic stretch="sm">
+      <motion.div
+        whileHover={{
+          scale: 1.05,
+          rotate: Math.random() * 2.5,
+          transition: { duration: 0.1 },
+        }}
+        className="w-fit px-2.5 py-0.5 border shadow-sm cursor-pointer bg-white"
+      >
+        {children}
+      </motion.div>
+    </Magnetic>
   );
 }
