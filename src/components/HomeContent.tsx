@@ -34,16 +34,21 @@ export default function HomeContent() {
   }, [tab]);
 
   return (
-    <main className="relative max-w-3xl mx-auto py-16 px-4 sm:px-6 lg:px-8 transition-all duration-300 ease-in-out">
+    <motion.main
+      initial={{ opacity: 0, filter: "blur(10px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.5 }}
+      className="relative max-w-3xl mx-auto py-16 px-4 sm:px-6 lg:px-8 transition-all duration-300 ease-in-out"
+    >
       <section className="mb-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
             <Image
-              src="/hero.png"
+              src="/hero.jpg"
               height={120}
-              width={120}
+              width={130}
               alt="Parthiv Parmar"
-              className="rounded-full shadow-lg"
+              className="rounded-full shadow-lg aspect-auto"
             />
 
             <div className="w-[200px] h-[60px] [perspective:1000px] group">
@@ -117,6 +122,6 @@ export default function HomeContent() {
           </AnimatePresence>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 }

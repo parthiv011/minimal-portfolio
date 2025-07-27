@@ -18,13 +18,19 @@ export const ExperienceItem = ({
 }: Props) => {
   return (
     <li>
-      <div className="flex items-center justify-between py-4 cursor-pointer">
+      <div
+        className="flex items-center justify-between py-4 cursor-pointer"
+        onClick={onToggle}
+      >
         <div>
           <h3 className="font-machina text-lg">{heading}</h3>
           <p className="text-sm text-gray-600">{subheading}</p>
         </div>
         <button
-          onClick={onToggle}
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent parent div's onClick
+            onToggle();
+          }}
           aria-expanded={isExpanded}
           aria-label={
             isExpanded
