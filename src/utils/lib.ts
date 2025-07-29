@@ -1,5 +1,20 @@
 export const projects = [
   {
+    heading: "Raymond Pizza Co.",
+    description:
+      "A simple menu simulator inspired by systems used in small hotels and restaurants. Includes cart functionality powered by Redux Toolkit for managing orders.Fetches the user’s real-time location to support order delivery.Lightweight and easy to use, ideal for basic food ordering scenarios.",
+    link: "https://raymond-pizza-co.vercel.app/",
+    github: "https://github.com/parthiv011/menu-simulator",
+    techstack: [
+      "React.js",
+      "Redux",
+      "Redux-thunk",
+      "Tailwind CSS",
+      "React-router-dom",
+      "Server Actions",
+    ],
+  },
+  {
     heading: "Upwork Automated Scraping",
     description:
       "A Node.js and Puppeteer-based scraper that automates data extraction from Upwork listings. The extracted job data is then processed using large language models (LLMs) to generate customizable job proposals with an editable interface.",
