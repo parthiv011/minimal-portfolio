@@ -4,8 +4,8 @@ export default function About() {
   return (
     <section>
       <article className="text-lg">
-        I&apos;m <span className="font-machina"> Parthiv</span>, a Full Stack
-        Developer/Freelancer and tech enthusiast who&apos;s been deep in the
+        I&apos;m <span className="font-machina"> Parthiv</span>, Software
+        Engineer/Freelancer and tech enthusiast who&apos;s been deep in the
         world of web apps, open source, and startup hustle. From shipping
         features at startups to contributing to open source communities, I
         thrive on turning ideas into scalable, user-friendly products. When

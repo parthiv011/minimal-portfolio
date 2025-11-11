@@ -5,15 +5,17 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import About from "@/components/tabs/About";
-import Projects from "@/components/tabs/Projects";
+// import Projects from "@/components/tabs/Projects";
 import Experiences from "@/components/tabs/Experiences";
 import Connect from "@/components/tabs/Connect";
+import { ProjectsNew } from "./tabs/ProjectsNew";
 
 const tabComponents = {
   About: <About />,
-  Projects: <Projects />,
+  Projects: <ProjectsNew />,
   Experiences: <Experiences />,
   Connect: <Connect />,
+  // ProjectsNew: ,
 };
 
 export default function HomeContent() {
@@ -27,11 +29,24 @@ export default function HomeContent() {
     defaultTab as keyof typeof tabComponents
   );
 
+  // --- buzzer/tag state ---
+  const [message, setMessage] = useState<string>("Available for hire");
+
   useEffect(() => {
     if (tab && typeof tab === "string" && tab in tabComponents) {
       setActiveTab(tab as keyof typeof tabComponents);
     }
   }, [tab]);
+
+  useEffect(() => {
+    const messages = ["Available for hire", "Available for freelance"];
+    let i = 0;
+    const interval = setInterval(() => {
+      i = (i + 1) % messages.length;
+      setMessage(messages[i]);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <motion.main
@@ -43,40 +58,78 @@ export default function HomeContent() {
       <section className="mb-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
-            <Image
-              src="/hero.jpg"
-              height={120}
-              width={130}
-              alt="Parthiv Parmar"
-              className="rounded-full shadow-lg aspect-auto"
-            />
+            {/* --- PROFILE IMAGE WITH SIDE TAG --- */}
+            <div className="relative flex flex-col items-center">
+              <div className="relative inline-block">
+                {/* Profile Image */}
+                <Image
+                  src="/hero.jpg"
+                  height={120}
+                  width={130}
+                  alt="Parthiv Parmar"
+                  className="rounded-full shadow-lg aspect-auto"
+                />
 
-            <div className="w-[200px] h-[60px] [perspective:1000px] group">
-              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
-                {/* Front */}
-                <div className="absolute inset-0 flex flex-col justify-center [backface-visibility:hidden]">
-                  <h1 className="font-machina text-xl sm:text-2xl">
-                    Parthiv Parmar
-                  </h1>
-                  <h2 className="font-machina text-sm sm:text-base text-gray-600">
-                    Full Stack Engineer
-                  </h2>
-                </div>
-                {/* Back */}
-                <div className="absolute inset-0 flex flex-col justify-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
-                  <h1 className="font-machina text-xl sm:text-2xl">
-                    Parthiv Parmar
-                  </h1>
-                  <h2 className="font-machina text-sm sm:text-base text-gray-600">
-                    Humble Guy!
-                  </h2>
+                {/* Side Tag — attached to image */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={message}
+                    initial={{ opacity: 0, x: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                    exit={{ opacity: 0, x: 10, scale: 0.95 }}
+                    transition={{ duration: 0.55 }}
+                    className="absolute -top-2 sm:top-0  sm:left-3/4 
+                               flex items-center gap-2 bg-green-50 text-green-500 
+                               text-[10px] sm:text-xs md:text-sm 
+                               px-3 py-1 rounded-full shadow-md font-medium z-10"
+                  >
+                    {/* left notch - gives tag-like attachment */}
+                    {/* <span className="absolute -left-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-green-500 rotate-45"></span> */}
+
+                    {/* pulsing dot */}
+                    <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-800 opacity-60"></span>
+                      <span className="relative inline-flex rounded-full h-full w-full bg-green-500"></span>
+                    </span>
+
+                    <span className="whitespace-nowrap tracking-wide text-[13px] leading-5">
+                      {message}
+                    </span>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* --- NAME CARD SECTION --- */}
+            <div className="flex flex-col items-center sm:items-start relative">
+              <div className="w-[200px] h-[60px] [perspective:1000px] group">
+                <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
+                  {/* Front */}
+                  <div className="absolute inset-0 flex flex-col justify-center [backface-visibility:hidden]">
+                    <h1 className="font-machina text-xl sm:text-2xl">
+                      Parthiv Parmar
+                    </h1>
+                    <h2 className="font-machina text-sm sm:text-base text-gray-600">
+                      Software Engineer
+                    </h2>
+                  </div>
+                  {/* Back */}
+                  <div className="absolute inset-0 flex flex-col justify-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                    <h1 className="font-machina text-xl sm:text-2xl">
+                      Parthiv Parmar
+                    </h1>
+                    <h2 className="font-machina text-sm sm:text-base text-gray-600">
+                      Humble Guy!
+                    </h2>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* CV Link */}
           <a
-            href="./Parthiv_Full_Stack_1year.pdf"
+            href="./Parthiv_Software_Engineer.pdf"
             download
             className="text-sm sm:text-base relative inline-block after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[1px] after:bg-black after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full"
           >
@@ -85,6 +138,7 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* --- Tabs Section --- */}
       <section>
         <hr className="border-t border-gray-200 mb-4" />
         <nav className="sticky top-0 pt-4 z-10 bg-white">
@@ -94,11 +148,11 @@ export default function HomeContent() {
                 <button
                   onClick={() => router.push(`/?tab=${tab}`, undefined)}
                   className={`relative inline-block px-1 pb-1 transition-all font-medium text-sm sm:text-base after:content-[''] after:absolute after:bottom-0 after:w-0 after:h-[1px] after:bg-black after:transition-all after:duration-300 cursor-pointer
-              ${
-                activeTab === tab
-                  ? "after:left-0 after:w-full"
-                  : "hover:after:left-0 hover:after:w-full"
-              }`}
+                    ${
+                      activeTab === tab
+                        ? "after:left-0 after:w-full"
+                        : "hover:after:left-0 hover:after:w-full"
+                    }`}
                 >
                   {tab}
                 </button>
