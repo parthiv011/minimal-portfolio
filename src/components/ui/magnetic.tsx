@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState } from 'react';
+import { motion } from 'motion/react';
 
 function Magnetic({
   children,
-  stretch = "md",
+  stretch = 'md',
   className,
 }: {
   children: React.ReactNode;
-  stretch?: "xs" | "sm" | "md" | "lg";
+  stretch?: 'xs' | 'sm' | 'md' | 'lg';
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,13 +22,13 @@ function Magnetic({
       const middleX = clientX - (left + width / 2);
       const middleY = clientY - (top + height / 2);
       setPosition(
-        stretch === "lg"
+        stretch === 'lg'
           ? { x: middleX, y: middleY }
-          : stretch === "md"
-          ? { x: middleX / 2, y: middleY / 2 }
-          : stretch === "sm"
-          ? { x: middleX / 4, y: middleY / 4 }
-          : { x: middleX / 8, y: middleY / 8 }
+          : stretch === 'md'
+            ? { x: middleX / 2, y: middleY / 2 }
+            : stretch === 'sm'
+              ? { x: middleX / 4, y: middleY / 4 }
+              : { x: middleX / 8, y: middleY / 8 }
       );
     }
   };
@@ -40,12 +40,12 @@ function Magnetic({
   const { x, y } = position;
   return (
     <motion.div
-      style={{ position: "relative" }}
+      style={{ position: 'relative' }}
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
       className={className}
     >
       {children}

@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { HiChevronDown } from "react-icons/hi";
+import { AnimatePresence, motion } from 'motion/react';
+import { HiChevronDown } from 'react-icons/hi';
 
 interface Props {
   heading: string;
@@ -9,19 +9,10 @@ interface Props {
   onToggle: () => void;
 }
 
-export const ExperienceItem = ({
-  heading,
-  subheading,
-  points,
-  isExpanded,
-  onToggle,
-}: Props) => {
+export const ExperienceItem = ({ heading, subheading, points, isExpanded, onToggle }: Props) => {
   return (
     <li>
-      <div
-        className="flex items-center justify-between py-4 cursor-pointer"
-        onClick={onToggle}
-      >
+      <div className="flex cursor-pointer items-center justify-between py-4" onClick={onToggle}>
         <div>
           <h3 className="font-machina text-lg">{heading}</h3>
           <p className="text-sm text-gray-600">{subheading}</p>
@@ -32,13 +23,9 @@ export const ExperienceItem = ({
             onToggle();
           }}
           aria-expanded={isExpanded}
-          aria-label={
-            isExpanded
-              ? "Collapse experience details"
-              : "Expand experience details"
-          }
-          className={`bg-gray-200 p-3 rounded-full transition-transform cursor-pointer ${
-            isExpanded ? "rotate-180" : ""
+          aria-label={isExpanded ? 'Collapse experience details' : 'Expand experience details'}
+          className={`cursor-pointer rounded-full bg-gray-200 p-3 transition-transform ${
+            isExpanded ? 'rotate-180' : ''
           }`}
         >
           <HiChevronDown className="size-6" />
@@ -50,13 +37,13 @@ export const ExperienceItem = ({
           <motion.ul
             key="content"
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
+            animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="pl-4 pb-4 list-disc text-sm text-gray-700 overflow-hidden"
+            className="list-disc overflow-hidden pb-4 pl-4 text-sm text-gray-700"
           >
             {points.map((point, idx) => (
-              <li key={idx} className="leading-relaxed mb-2">
+              <li key={idx} className="mb-2 leading-relaxed">
                 {point}
               </li>
             ))}
