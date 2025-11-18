@@ -1,7 +1,7 @@
 export const experiences = [
   {
     heading: 'ITMTB Technologies Private Limited',
-    subheading: 'Full Stack Engineer Intern (Dec 2024 - May 2025)',
+    subheading: 'Full Stack Engineer Intern (Dec 2024 - June 2025)',
     points: [
       'Collaborated with engineering team to monitor, scale, and enhance backend services, improving performance for one of India’s top 4 e-commerce platforms.',
       'Designed and integrated key features into end-to-end platform for B2B apparel operations, resulting in a 84% reduction in manual workload.',

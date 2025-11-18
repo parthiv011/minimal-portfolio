@@ -23,7 +23,7 @@ export default function ConnectButton() {
       data-cal-namespace="30min"
       data-cal-link="parthiv-parmar-ah4n0j/30min"
       data-cal-config='{"layout":"month_view", "theme": "light"}'
-      className="flex cursor-pointer items-center justify-center gap-1"
+      className="font-machina flex cursor-pointer items-center justify-center gap-1 font-bold"
       onHoverStart={() => setIsHover(true)}
       onHoverEnd={() => setIsHover(false)}
       whileHover={{ scale: 1.03 }}

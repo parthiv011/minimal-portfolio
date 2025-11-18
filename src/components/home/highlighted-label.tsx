@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const HiglightedLabel = ({ text }: { text: string }) => {
+export const HighlightedLabel = ({ text }: { text: string }) => {
   return (
     <span className="font-machina relative inline-block font-medium">
       <span className="absolute inset-0 z-0 h-full w-full scale-[1.04] bg-neutral-100" />
