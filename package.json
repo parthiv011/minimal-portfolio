@@ -12,7 +12,7 @@
     "@calcom/embed-react": "^1.5.3",
     "clsx": "^2.1.1",
     "motion": "^12.23.24",
-    "next": "15.2.4",
+    "next": "15.2.8",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "react": "^19.0.0",
