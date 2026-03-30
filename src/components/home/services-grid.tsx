@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 // import { AnimatedFullstack } from './animated-fullstack';
 import { techConfig } from '@/utils/tech';
 import { AnimatedTooltip } from './animated-tooltip';
+import { AnimatedFullstack } from './animated-fullstack';
 
 /**
  * Services Section
@@ -20,7 +21,7 @@ export const Services = () => {
   const services = [
     {
       title: 'Frontend Development',
-      desc: 'I create production-ready frontend implementations that meet defined technical requirements, integrate cleanly with backend systems, and maintain visual consistency across different viewports.',
+      desc: 'Production-ready UIs that integrate cleanly with backend systems — built with React, Next.js, and TypeScript with consistent cross-device behavior.',
       tech: [
         techConfig.javascript,
         techConfig.typescript,
@@ -32,7 +33,7 @@ export const Services = () => {
     },
     {
       title: 'Backend Development',
-      desc: 'I create stable and efficient backend workflows, ensuring accurate data processing, robust error handling, and reliable service-to-service communication.',
+      desc: 'Stable APIs and backend systems with proper error handling, data pipelines, and service communication — built to scale.',
       tech: [
         techConfig.nodejs,
         techConfig.prisma,
@@ -44,14 +45,14 @@ export const Services = () => {
     },
     {
       title: 'Full Stack Development',
-      desc: 'I handle everything end-to-end — from concept to deployment. Perfect for startups looking for complete product ownership.',
-      component: null,
+      desc: "End-to-end product ownership — from schema design to deployment. I've shipped complete systems solo and in teams.",
+      component: <AnimatedFullstack />,
     },
   ];
 
   return (
     <section>
-      <h2 className="font-machina my-4 font-bold">Services I provide #</h2>
+      <h2 className="font-machina my-4 font-bold">What I build #</h2>
 
       <div className="grid grid-cols-1 border border-neutral-200 sm:grid-cols-2">
         {services.map((item, index) => {
@@ -87,7 +88,7 @@ export const Services = () => {
                 </div>
               )}
 
-              {/* {item.component && <div className="mt-4">{item.component}</div>} */}
+              {item.component && <div className="mt-4">{item.component}</div>}
             </motion.div>
           );
         })}

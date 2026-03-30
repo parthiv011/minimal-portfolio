@@ -14,10 +14,12 @@ export default function Projects() {
             <ProjectCard
               key={index}
               heading={project.heading}
-              description={project.description}
+              what={project.what}
               link={project.link}
               github={project.github}
               techstack={project.techstack}
+              features={project.features}
+              status={project.status}
             />
           );
         })}

@@ -1,39 +1,36 @@
 export const experiences = [
   {
     heading: 'ITMTB Technologies Private Limited',
-    subheading: 'Full Stack Engineer Intern (Dec 2024 - June 2025)',
+    subheading: 'Full Stack Engineer Intern · Dec 2024 – Jun 2025',
     points: [
-      'Collaborated with engineering team to monitor, scale, and enhance backend services, improving performance for one of India’s top 4 e-commerce platforms.',
-      'Designed and integrated key features into end-to-end platform for B2B apparel operations, resulting in a 84% reduction in manual workload.',
-      'Automated the relabeling of 50,000+ products, including restructuring their category hierarchies, using a custom script—improving data consistency and system scalability.',
-      'Deployed 4 cron jobs to automate the retrieval and storage of Meta Ads and Google Analytics data into the database, ensuring consistent and reliable tracking of marketing performance.',
+      "Scaled backend services using Node.js, Express, and PostgreSQL for one of India's top 4 e-commerce platforms, reducing API response times by 28% across 15+ high-traffic endpoints.",
+      'Built secure REST APIs for authentication, product lifecycle, and order workflows used by 100+ internal stakeholders — improving data reliability by 40%.',
+      'Automated catalog pipelines to clean and standardize 10,000+ SKUs, cutting manual operations by 70%.',
+      'Deployed cron jobs and background workers to sync inventory, analytics, and catalog data across systems.',
     ],
   },
   {
-    heading: 'Sweden-based Web3 Startup (Freelance Project)',
-    subheading: 'Freelance Frontend Developer (1 week)',
+    heading: 'GSSoC – GirlScript Summer of Code',
+    subheading: 'Open Source Contributor · May – Oct 2024',
     points: [
-      'Designed and developed a responsive four-page website (Landing, About, Services, Our Work, Hire Us) using React, Tailwind CSS, and Framer Motion.',
-      'Implemented smooth animations and modern UI patterns to enhance user engagement and ensure cross-device compatibility.',
-      'Delivered the project within the agreed timeline, aligning closely with the client’s Web3 brand identity and receiving positive feedback for both design and functionality.',
+      'Resolved 20+ backend and full-stack issues across repositories with 3,000+ active contributors using Node.js, WebSockets, and Next.js.',
+      'Deployed microservices on Cloudflare Workers, reducing global API latencies by ~30% for 10,000+ monthly calls.',
+      'Implemented Redis-backed caching and optimized Prisma ORM queries, reducing redundant database reads by 55%.',
     ],
   },
   {
-    heading: 'Finance & Investment Client (Freelance Project)',
-    subheading: 'Freelance Frontend Developer (1 Week)',
+    heading: 'Finance & Investment Client',
+    subheading: 'Freelance Developer · 2024',
     points: [
-      'Built a responsive website for a finance and investment firm, showcasing their services, expertise, and success stories.',
-      'Implemented modern visuals and intuitive navigation across key pages including About, Services, Asset Management, and Contact.',
-      'Delivered a clean, professional platform that reinforced brand credibility and helped attract new client leads.',
+      'Built a professional website for a finance and investment firm featuring service pages, asset management section, and contact flows.',
+      'Delivered clean, modern UI that reinforced brand credibility and drove direct client interest.',
     ],
   },
   {
-    heading: 'GSSOC - GirlsScript Summer of Code',
-    subheading: 'Contributor',
+    heading: 'Sweden-based Web3 Startup',
+    subheading: 'Freelance Frontend Developer · 2024',
     points: [
-      'Led the development and optimization of features across multiple frameworks, resulting in a 25% improvement in code performance.',
-      'Resolved over 20+ issues and helped building 5 new features in private and public projects with React, Node, Next.js, Websockets.',
-      'Improved deployment efficiency by 30% through implementing serverless workers on Cloudflare with Hono.js, working within a team of 8 contributors.',
+      'Built a responsive 5-page site using React, Framer Motion, and Tailwind CSS — delivered on time with positive client feedback.',
     ],
   },
 ];

@@ -60,7 +60,7 @@ export const Industries = () => {
 
   return (
     <div>
-      <h2 className="font-machina my-4 font-bold">Industries I serve #</h2>
+      <h2 className="font-machina my-4 font-bold">Domains I&apos;ve worked in #</h2>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {industries.map((industry, idx) => (
           <motion.div

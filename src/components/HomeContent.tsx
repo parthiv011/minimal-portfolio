@@ -1,19 +1,21 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import About from '@/components/tabs/About';
+import { AnimatePresence, motion } from 'motion/react';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { AnimatePresence, motion } from 'motion/react';
-import About from '@/components/tabs/About';
+import { useEffect, useState } from 'react';
 // import Projects from "@/components/tabs/Projects";
-import Experiences from '@/components/tabs/Experiences';
 import Connect from '@/components/tabs/Connect';
-import { ProjectsNew } from './tabs/ProjectsNew';
+import Experiences from '@/components/tabs/Experiences';
+import Contributions from './tabs/contributions';
+import Projects from './tabs/Projects';
 
 const tabComponents = {
   About: <About />,
-  Projects: <ProjectsNew />,
   Experiences: <Experiences />,
+  Projects: <Projects />,
+  Contributions: <Contributions />,
   Connect: <Connect />,
   // ProjectsNew: ,
 };
@@ -38,7 +40,7 @@ export default function HomeContent() {
   }, [tab]);
 
   useEffect(() => {
-    const messages = ['Available for hire', 'Available for freelance'];
+    const messages = ['Open to full time roles'];
     let i = 0;
     const interval = setInterval(() => {
       i = (i + 1) % messages.length;
@@ -110,7 +112,9 @@ export default function HomeContent() {
                   {/* Back */}
                   <div className="absolute inset-0 flex [transform:rotateX(180deg)] flex-col justify-center [backface-visibility:hidden]">
                     <h1 className="font-machina text-xl sm:text-2xl">Parthiv Parmar</h1>
-                    <h2 className="font-machina text-sm text-gray-600 sm:text-base">Humble Guy!</h2>
+                    <h2 className="font-machina text-sm text-gray-600 sm:text-base">
+                      Building in Fintech!
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -119,7 +123,7 @@ export default function HomeContent() {
 
           {/* CV Link */}
           <a
-            href="./Parthiv_Software_Engineer.pdf"
+            href="./Parthiv_SoftwareEngineer.pdf"
             download
             className="relative inline-block text-sm after:absolute after:bottom-0 after:left-1/2 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:w-full sm:text-base"
           >
@@ -132,9 +136,9 @@ export default function HomeContent() {
       <section>
         <hr className="mb-4 border-t border-gray-200" />
         <nav className="sticky top-0 z-10 mt-4 bg-white">
-          <ul className="flex flex-wrap gap-4 overflow-x-auto sm:gap-6">
+          <ul className="scrollbar-hide flex gap-4 overflow-x-auto pb-1 whitespace-nowrap sm:gap-6">
             {Object.keys(tabComponents).map((tab) => (
-              <li key={tab}>
+              <li key={tab} className="shrink-0">
                 <button
                   onClick={() => router.push(`/?tab=${tab}`, undefined)}
                   className={`relative inline-block cursor-pointer px-1 pb-1 text-base font-medium transition-all after:absolute after:bottom-0 after:h-[1px] after:w-0 after:bg-black after:transition-all after:duration-300 after:content-[''] sm:text-lg ${
